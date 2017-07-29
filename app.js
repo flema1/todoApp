@@ -21,17 +21,34 @@ app.use(logger('dev'));
 // app.use(methodOverride('_method'));
 // app.use(cookieParser());
 
-app.get('/', function (req, res) {
-  res.send('Hello Franklin!')
-})
+// static files
+app.use(express.static('public'));
+
+// views
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+
+// Our index route!
+app.get('/', (req, res) => {
+  res.render('index', {
+    message: 'Hello world we are aalive!',
+  });
+});
+
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
+//index(homepage route)
 app.get('/toDos', (req, res) => {
   res.send('Info about toDos!');
 });
+
+//additional routes
+const todoRoutes = require('./routes/todo-routes');
+app.use('/toDos/', todoRoutes);
 
 
 // get anything that hasn't already been matched
