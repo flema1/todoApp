@@ -1,6 +1,6 @@
 
 
-INSERT INTO movies (title, category, status) VALUES 
+INSERT INTO todos (title, category, status) VALUES 
 (
   'Buy Milk',
   'Shopping',

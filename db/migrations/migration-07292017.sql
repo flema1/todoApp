@@ -1,8 +1,8 @@
 
--- CREATE DATABASE delorean_todo_dev;
-\c delorean_todo_dev
+-- CREATE DATABASE delorean_todos_dev;
+\c delorean_todos_dev
 
-CREATE TABLE IF NOT EXISTS todo (
+CREATE TABLE IF NOT EXISTS todos (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   category VARCHAR(50),

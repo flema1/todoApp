@@ -1,2 +1,2 @@
-\c delorean_todo_dev
+\c delorean_todos_dev
 \i todo.sql
